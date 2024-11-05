@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YellowBelt", "YellowBelt\YellowBelt.csproj", "{2A89C163-6237-4A16-BDDA-689DC47950EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. Mini-Kata 5 - Simple Methods", "1. Mini-Kata 5 - Simple Methods\1. Mini-Kata 5 - Simple Methods.csproj", "{33129477-8FDF-4473-896B-EC86F77B6FA9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A89C163-6237-4A16-BDDA-689DC47950EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A89C163-6237-4A16-BDDA-689DC47950EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A89C163-6237-4A16-BDDA-689DC47950EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A89C163-6237-4A16-BDDA-689DC47950EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33129477-8FDF-4473-896B-EC86F77B6FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33129477-8FDF-4473-896B-EC86F77B6FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33129477-8FDF-4473-896B-EC86F77B6FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33129477-8FDF-4473-896B-EC86F77B6FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
