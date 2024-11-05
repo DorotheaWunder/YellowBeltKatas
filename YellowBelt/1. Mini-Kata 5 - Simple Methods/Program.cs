@@ -1,4 +1,4 @@
-﻿class ProgramKata5
+﻿class ProgramMiniKata5
 {
     private static int PlayerHealth { get; set; } = 100;
     private static int EnemyHealth { get; set; } = 100;
