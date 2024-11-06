@@ -2,20 +2,20 @@
 {
     static void Main()
     {
-        Game game = new();
+        Game_MK6 game= new();
         string[] enemyArray = game.InitializeEnemies();
         List<string> itemList = game.InitializeItems();
         
-        PrintInfo.PrintArray(enemyArray);
+        PrintInfo_MK6.PrintArray(enemyArray);
         Console.WriteLine();
-        PrintInfo.PrintList(itemList);
+        PrintInfo_MK6.PrintList(itemList);
         Console.WriteLine();
         itemList.Add("Helmet");
-        PrintInfo.PrintList(itemList);
+        PrintInfo_MK6.PrintList(itemList);
     }
 }
 
-class Game()
+class Game_MK6()
 {
     public string[] InitializeEnemies()
     {
@@ -28,7 +28,7 @@ class Game()
     }
 }
 
-public class PrintInfo
+public class PrintInfo_MK6
 {
     public static void PrintArray(string[] arrayContent)
     {
