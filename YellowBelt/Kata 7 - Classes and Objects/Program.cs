@@ -36,7 +36,6 @@ class Player_K7
     
     public void GainExperience(int exp)
     {
-        
         Console.WriteLine($"{PlayerName} gained {exp} experience");
     }
 }
