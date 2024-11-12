@@ -1,4 +1,6 @@
-﻿class ProgramKata10
+﻿namespace Kata10;
+
+class ProgramKata10
 {
     static void Main()
     {
@@ -48,7 +50,7 @@
     }
 }
 
-
+//combat in its own class right now - needs refactoring
 //-------------------------------------------combat part
 public interface ITarget
 { 
@@ -121,7 +123,6 @@ class Enemy_K10 : Combatant
         TargetHealth = health;
     }
 }
-
 
 //-------------------------------------------npc part
 public interface INpc

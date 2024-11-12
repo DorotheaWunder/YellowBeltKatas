@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kata 9 - Object Instantiati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kata 10 - Extracting Interfaces to Reduce Code Duplication", "Kata 10 - Extracting Interfaces to Reduce Code Duplication\Kata 10 - Extracting Interfaces to Reduce Code Duplication.csproj", "{2EBDDD3B-7EAA-4D06-BDDA-F5D78A66592A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10. Exam Kata - Text-Based Dungeon Crawler", "10. Exam Kata - Text-Based Dungeon Crawler\10. Exam Kata - Text-Based Dungeon Crawler.csproj", "{CABF57ED-FEC2-4D1E-AD8B-038B819F3C8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,5 +68,9 @@ Global
 		{2EBDDD3B-7EAA-4D06-BDDA-F5D78A66592A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EBDDD3B-7EAA-4D06-BDDA-F5D78A66592A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EBDDD3B-7EAA-4D06-BDDA-F5D78A66592A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CABF57ED-FEC2-4D1E-AD8B-038B819F3C8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CABF57ED-FEC2-4D1E-AD8B-038B819F3C8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CABF57ED-FEC2-4D1E-AD8B-038B819F3C8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CABF57ED-FEC2-4D1E-AD8B-038B819F3C8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
