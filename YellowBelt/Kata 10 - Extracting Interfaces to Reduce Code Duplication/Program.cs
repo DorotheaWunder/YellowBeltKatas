@@ -1,4 +1,4 @@
-﻿namespace Kata10;
+﻿namespace Kata10Exam;
 
 class ProgramKata10
 {
@@ -50,8 +50,6 @@ class ProgramKata10
     }
 }
 
-//combat in its own class right now - needs refactoring
-//-------------------------------------------combat part
 public interface ITarget
 { 
     string Name { get; set; }

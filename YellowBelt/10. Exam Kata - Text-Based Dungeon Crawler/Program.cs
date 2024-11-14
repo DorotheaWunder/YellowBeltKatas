@@ -1,8 +1,20 @@
-﻿class ProgramExamKata10
+﻿namespace Kata10Exam;
+
+
+class ProgramExamKata10
 {
-    static void Main()
+    
+    public static void Main()
     {
-        Console.WriteLine("Hello, World!");
+        //maybe enter player name here?
+        MasterGameflow gameflow = new MasterGameflow();
+        while (gameflow.IsPlayerAlive())
+        {
+            gameflow.DetermineGameflow();
+            Console.WriteLine();
+        }
+        Console.WriteLine("You have been defeated");
+        Console.WriteLine("GAME OVER");
     }
 }
 
