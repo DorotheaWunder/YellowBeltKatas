@@ -1,8 +1,7 @@
-﻿using Kata10Exam;
-
-namespace Kata10Exam
+﻿using ExamKata;
+namespace ExamKata
 {
-    public class CombatantCreationLogic
+    public class EnemyCreation
     {
         public enum EnemyType
         {
@@ -11,8 +10,8 @@ namespace Kata10Exam
             Goblin,
             Kobold
         }
-
-        public static CombatSetup.Enemy CreateEnemy(EnemyType enemyType)
+    
+        public static CombatantSetup.Enemy CreateEnemy(EnemyType enemyType)
         {
             switch (enemyType)
             {
@@ -28,7 +27,7 @@ namespace Kata10Exam
                     return new CombatantSetup.Enemy("Slime", 5, 5);
             }
         }
-
+    
         public static CombatantSetup.Enemy CreateRandomEnemy()
         {
             Random random = new Random();
@@ -38,3 +37,4 @@ namespace Kata10Exam
         }
     }
 }
+
