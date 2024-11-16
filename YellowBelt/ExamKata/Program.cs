@@ -4,7 +4,11 @@
     {
         public static void Main()
         {
-            MasterGameflow masterGameflow = new MasterGameflow();
+            NpcGameflow npcGameflow = new NpcGameflow(new NpcInteraction(), new MasterGameflow(null, null));  
+            CombatGameflow combatGameflow = new CombatGameflow();  
+            
+            MasterGameflow masterGameflow = new MasterGameflow(npcGameflow, combatGameflow);
+            
             masterGameflow.DetermineGameflow();
         }
     }
