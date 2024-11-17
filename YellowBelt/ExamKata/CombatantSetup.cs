@@ -58,6 +58,11 @@ namespace ExamKata
                 Health += HealPower;
                 Console.WriteLine($"{Name} heals for {HealPower} and now has {Health} HP");
             }
+
+            public bool IsPlayerAlive()
+            {
+                return Health > 0;
+            }
         }
         
         public class Enemy : Combatant

@@ -3,12 +3,12 @@ namespace ExamKata
 {
     public class NpcGameflow
     {
-        public interface IPathAction
+        private interface IPathAction
         {
             void Execute();
         }
         
-        public class LeaveVillageAction : IPathAction
+        private class LeaveVillageAction : IPathAction
         {
             private NpcInteraction _npcNpcInteraction;
             private MasterGameflow _masterGameflow;
@@ -24,7 +24,7 @@ namespace ExamKata
                 _masterGameflow.VillageEnterExit();
             }
         }
-        public class GoMarketAction : IPathAction
+        private class GoMarketAction : IPathAction
         {
             private NpcInteraction _npcInteraction;
 
@@ -42,7 +42,7 @@ namespace ExamKata
             }
         }
         
-        public class GoMerchantAction : IPathAction
+        private class GoMerchantAction : IPathAction
         {
             private NpcInteraction _npcInteraction;
 
@@ -57,7 +57,7 @@ namespace ExamKata
             }
         }
         
-        public class GoBlacksmithAction : IPathAction
+        private class GoBlacksmithAction : IPathAction
         {
             private NpcInteraction _npcInteraction;
 
@@ -72,7 +72,7 @@ namespace ExamKata
             }
         }
         
-        public class GoGateAction : IPathAction
+        private class GoGateAction : IPathAction
         {
             private NpcInteraction _npcInteraction;
 
@@ -87,7 +87,7 @@ namespace ExamKata
             }
         }
         
-        public class GoStreetsAction : IPathAction
+        private class GoStreetsAction : IPathAction
         {
             private NpcInteraction _npcInteraction;
 
@@ -121,7 +121,6 @@ namespace ExamKata
         
         public void PathDesciption()
         {
-            Console.WriteLine("You are currently in a small village.");
             Console.WriteLine("1 ---- go to the marketplace");
             Console.WriteLine("2 ---- look for a merchant");
             Console.WriteLine("3 ---- seek out a blacksmith");
@@ -131,7 +130,7 @@ namespace ExamKata
             PathChoice();
         }
 
-        public void PathChoice()
+        private void PathChoice()
         {
             Console.Write("Enter your choice: ");
             if (int.TryParse(Console.ReadLine(), out int pathNumber) && _pathActions.ContainsKey(pathNumber))

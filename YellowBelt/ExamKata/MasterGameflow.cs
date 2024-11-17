@@ -3,34 +3,56 @@ namespace ExamKata
 {
     public class MasterGameflow
     {
+        private CombatantSetup.Player _player;
         private bool _isInVillage;
         private CombatGameflow _combatGameflow;
         private NpcGameflow _npcGameflow;
 
-        public MasterGameflow(NpcGameflow npcGameflow, CombatGameflow combatGameflow)
+        public MasterGameflow()
         {
-            _npcGameflow = npcGameflow;
-            _combatGameflow = combatGameflow;
-            _isInVillage = false;
+            _npcGameflow = new NpcGameflow(new NpcInteraction(), this);
+            _combatGameflow = new CombatGameflow(this);
+            _isInVillage = true;
+        }
+        
+        public void RunGame()
+        {
+            SetupPlayer();
+            while (_player.IsPlayerAlive())
+            {
+                while (_isInVillage)
+                {
+                    Console.WriteLine("You stand at the entry of a village");
+                    Console.WriteLine("If you turn back now you will be attacked");
+                
+                    _npcGameflow.PathDesciption();
+                }
+                _combatGameflow.StartCombat();
+            }
         }
 
-        public void DetermineGameflow()
+        public void SetupPlayer()
         {
-            if (_isInVillage)
-            {
-                Console.WriteLine("You stand at the entry of a village");
-                Console.WriteLine("If you turn back now you will be attacked");
-                _npcGameflow.PathDesciption();
-            }
-            else
-            {
-                _combatGameflow.InitializeCombat();
-            }
+            _player = new CombatantSetup.Player("", 10, 100, 20);
+            NamePlayer();
+            _combatGameflow.AssignPlayer(_player);
         }
 
-        public void InitializeCombat() //--------------------maybe in combat gameflow
+        public void NamePlayer()
         {
-            _combatGameflow.InitializeCombat();
+            string playerName = GetPlayerName();
+            _player.Name = playerName;
+        }
+        
+        public string GetPlayerName()
+        {
+            Console.Write("Enter your hero's name: ");
+            return Console.ReadLine();
+        }
+
+        public void SetIsInVillage(bool newIsInVillage)
+        {
+            _isInVillage = newIsInVillage;
         }
 
         public void VillageEnterExit()
@@ -51,6 +73,11 @@ namespace ExamKata
             {
                 Console.WriteLine("Invalid input. Enter either 'y' or 'n'.");
             }
+        }
+
+        public bool GetInVillage()
+        {
+            return _isInVillage;
         }
     }
 }

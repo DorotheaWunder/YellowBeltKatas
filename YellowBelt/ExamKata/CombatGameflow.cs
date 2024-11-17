@@ -2,35 +2,40 @@
 {
     public class CombatGameflow
     {
-        private bool _isPlayerTurn;
+        private bool _isPlayerTurn = true;
         private CombatantSetup.Player _player;
-        private CombatantSetup.Enemy _enemy; 
-    
-        public void CreatePlayer()
+        private CombatantSetup.Enemy _enemy;
+
+        private MasterGameflow _masterGameflow;
+
+        public CombatGameflow(MasterGameflow masterGameflow)
         {
-            Console.Write("Enter your hero's name: ");
-            string playerName = Console.ReadLine();
-            _player = new CombatantSetup.Player(playerName, 10, 100, 20);
+            _masterGameflow = masterGameflow;
         }
-    
-        public void InitializeFighters()
+
+        public void InitializeEnemy()
         {
-            CreatePlayer();
             _enemy = EnemyCreation.CreateRandomEnemy();
         }
-    
-        public void InitializeCombat()
+
+        public void StartCombat()
         {
-            InitializeFighters();
-            TurnOrder();
+            InitializeEnemy();
+            CombatLoop();
         }
-        public void TurnOrder()
+
+        private void CombatLoop()
         {
-            while (_player.Health > 0 && _enemy.Health > 0)
+            Console.WriteLine($"A {_enemy.Name} blocks your way!");
+
+            while (_player.Health > 0 && _enemy.Health > 0 && !_masterGameflow.GetInVillage())
             {
+                Console.WriteLine($"{_player.Name} HP: {_player.Health}");
+                Console.WriteLine($"{_enemy.Name} HP: {_enemy.Health}");
+
                 if (_isPlayerTurn)
                 {
-                    PlayerActionDescription();
+                    PlayerTurn();
                 }
                 else
                 {
@@ -38,6 +43,11 @@
                 }
                 _isPlayerTurn = !_isPlayerTurn;
             }
+            BattleResult();
+        }
+
+        private void BattleResult()
+        {
             if (_player.Health <= 0)
             {
                 Console.WriteLine($"The {_enemy.Name} managed to kill you!");
@@ -47,18 +57,21 @@
                 Console.WriteLine($"You defeated the {_enemy.Name}!");
             }
         }
-        
-        public void PlayerActionDescription()
+
+        private void PlayerTurn()
         {
-            Console.WriteLine($"Player HP: {_player.Health}");
-            Console.WriteLine($"Enemy HP: {_enemy.Health}");
+            PlayerActionDescription();
+            ActionChoice();
+        }
+        
+        private void PlayerActionDescription()
+        {
             Console.WriteLine("Choose an action:");
             Console.WriteLine("1 ---- Attack");
             Console.WriteLine("2 ---- Heal");
-            
-            ActionChoice();
+            Console.WriteLine("3 ---- Flee");
         }
-        public void ActionChoice()
+        private void ActionChoice()
         {
             string choice = Console.ReadLine();
             switch (choice)
@@ -69,10 +82,20 @@
                 case "2":
                     _player.Heal(); 
                     break;
+                case "3":
+                    Console.WriteLine("You have succefully fled to the village");
+                    _masterGameflow.SetIsInVillage(true);
+                    break;
                 default:
                     Console.WriteLine("Invalid choice. Please select 1, 2, or 3.");
+                    PlayerTurn();
                     break;
             }
+        }
+
+        public void AssignPlayer(CombatantSetup.Player player)
+        {
+            _player = player;
         }
     }
 }
