@@ -22,8 +22,10 @@ namespace ExamKata
             {
                 while (_isInVillage)
                 {
+                    Console.WriteLine();
                     Console.WriteLine("You stand at the entry of a village");
                     Console.WriteLine("If you turn back now you will be attacked");
+                    Console.WriteLine();
                 
                     _npcGameflow.PathDesciption();
                 }

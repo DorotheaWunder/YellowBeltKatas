@@ -43,6 +43,7 @@ namespace ExamKata
             Console.WriteLine("Just look around:");
             foreach (var item in ItemList)
             {
+                Thread.Sleep(300);
                 Console.WriteLine((ItemList.IndexOf(item) +1) + "-----" + item);
             }
         }

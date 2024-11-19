@@ -26,19 +26,26 @@
 
         private void CombatLoop()
         {
+            Console.WriteLine();
             Console.WriteLine($"A {_enemy.Name} blocks your way!");
 
             while (_player.Health > 0 && _enemy.Health > 0 && !_masterGameflow.GetInVillage())
             {
+                Console.WriteLine();
                 Console.WriteLine($"{_player.Name} HP: {_player.Health}");
                 Console.WriteLine($"{_enemy.Name} HP: {_enemy.Health}");
+                Console.WriteLine();
 
                 if (_isPlayerTurn)
                 {
+                    Thread.Sleep(1000);
                     PlayerTurn();
+                    Console.WriteLine();
                 }
                 else
                 {
+                    Thread.Sleep(1000);
+                    Console.WriteLine();
                     _enemy.Attack(_player);
                 }
                 _isPlayerTurn = !_isPlayerTurn;
@@ -50,10 +57,14 @@
         {
             if (_player.Health <= 0)
             {
+                Thread.Sleep(1000);
+                Console.WriteLine();
                 Console.WriteLine($"The {_enemy.Name} managed to kill you!");
             }
             else if (_enemy.Health <= 0)
             {
+                Thread.Sleep(1000);
+                Console.WriteLine();
                 Console.WriteLine($"You defeated the {_enemy.Name}!");
             }
         }

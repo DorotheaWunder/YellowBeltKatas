@@ -20,7 +20,6 @@ namespace ExamKata
             }
             public void Execute()
             {
-                Console.WriteLine("You leave the village.");
                 _masterGameflow.VillageEnterExit();
             }
         }
@@ -37,6 +36,7 @@ namespace ExamKata
             {
                 Console.WriteLine("You are now standing on a bustling marketplace.");
                 Console.WriteLine("A man bumps into you and apologizes");
+                Thread.Sleep(300);
                 _npcInteraction.MeetThiefNpc();
                 Console.WriteLine("Your purse suddenly feels much lighter");
             }
@@ -127,6 +127,7 @@ namespace ExamKata
             Console.WriteLine("4 ---- stroll along the gates");
             Console.WriteLine("5 ---- explore the village streets");
             Console.WriteLine("6 ---- leave the village");
+            Console.WriteLine();
             PathChoice();
         }
 
