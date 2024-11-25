@@ -56,10 +56,26 @@ namespace ExamKata
     
     public class InitializeShopItems
     {
-        public static List<string> ItemsDefaultShop() => new List<string> { "Potion", "Tent", "Antidote" };
+        public static List<Item> ItemsDefaultShop() => new List<Item>
+        {
+            new Item("Potion", 10),
+            new Item("Tent", 50),
+            new Item("Antidote", 15),
+        };
 
-        public static List<string> ItemsBlacksmithShop() => new List<string> { "Sword", "Shield", "Helmet", "Armor" };
+        public static List<Item> ItemsBlacksmithShop() => new List<Item> 
+        {
+            new Item("Sword", 100),
+            new Item("Shield", 50),
+            new Item("Helmet", 75),
+            new Item("Armor", 200),
+        };
 
-        public static List<string> ItemsMagicShop() => new List<string> { "Mana Potion", "Spellbook", "Wizard Robe" };
+        public static List<Item> ItemsMagicShop() => new List<Item> 
+        {
+            new Item("Mana Potion", 30),
+            new Item("Spellbook", 500),
+            new Item("Wizard Robe", 300),
+        };
     }
 }

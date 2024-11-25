@@ -3,6 +3,13 @@ namespace ExamKata
 {
     public class NpcInteraction
     {
+        private CombatantSetup.Player _player;
+
+        public NpcInteraction(CombatantSetup.Player player)
+        {
+            _player = player;
+        }
+        
         public void MeetDefaultNpc()
         {
             Console.WriteLine();
@@ -18,6 +25,7 @@ namespace ExamKata
             BaseNpc npc2 = NpcCreationLogic.CreateNpc("VERY UNSUSPICIOUS CITIZEN", NpcCreationLogic.NpcType.Default);
             Thread.Sleep(500);
             Console.WriteLine("Oh my, sorry for bumping into you");
+            _player.Gold -= 10;
             npc2.Speak();
         }
 
@@ -30,9 +38,7 @@ namespace ExamKata
             Console.WriteLine("As you enter the shop, you are greeted by the merchant");
             merchant.Speak();
             Thread.Sleep(300);
-            merchant.Trade();
-            Console.WriteLine("this is the part where you would be able to buy items - but alas - the programmer ran out of time...");
-            Console.WriteLine("----- back to the village you go! -----");
+            merchant.Trade(_player);
             Thread.Sleep(1000);
         }
 
@@ -45,9 +51,7 @@ namespace ExamKata
             Console.WriteLine("You walk by a smithy and a bulky man calls out to you");
             blacksmith.Speak();
             Thread.Sleep(300);
-            blacksmith.Trade();
-            Console.WriteLine("this is the part where you would be able to buy items - but alas - the programmer ran out of time...");
-            Console.WriteLine("----- back to the village you go! -----");
+            blacksmith.Trade(_player);
             Thread.Sleep(1000);
         }
 
@@ -60,11 +64,8 @@ namespace ExamKata
             Console.WriteLine("A voice comoing out of a shady alleyway startles you");
             magicseller.Speak();
             Thread.Sleep(300);
-            magicseller.Trade();
-            Console.WriteLine("this is the part where you would be able to buy items - but alas - the programmer ran out of time...");
-            Console.WriteLine("----- back to the village you go! -----");
+            magicseller.Trade(_player);
             Thread.Sleep(1000);
         }
     }
 }
-

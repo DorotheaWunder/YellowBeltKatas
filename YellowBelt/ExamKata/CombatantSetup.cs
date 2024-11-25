@@ -46,11 +46,15 @@ namespace ExamKata
         public class Player : Combatant
         {
             public int HealPower { get; set; }
+            public int Gold { get; set; }
+            public bool IsInVillage { get; set; }
             
-            public Player(string name, int damage, int health, int healPower) 
+            public Player(string name, int damage, int health, int healPower, int gold, bool isInVillage) 
                 : base(name, damage, health)
             {
                 HealPower = healPower;
+                Gold = gold;
+                IsInVillage = isInVillage;
             }
     
             public void Heal()
@@ -74,4 +78,3 @@ namespace ExamKata
         }
     }
 }
-
